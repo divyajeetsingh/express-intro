@@ -1,0 +1,128 @@
+<div class="container">
+    <div class="row mt-5 mb-1">
+        <div class="col-12">
+            <h4 class="text-center text-dark">Domain Redirect</h4>
+        </div>
+    </div>
+  <div class="row mb-5">
+      <div class="col-md-6 offset-md-3">
+          <div class="card">
+              <form method="POST" action="/">
+                  <div class="card-body">
+                      <div class="form-group row">
+                          <label  class="col-sm-4 text-right control-label col-form-label">Existing Domain</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control" id="edomain"  name="edomain"   placeholder="Existing Domain">
+                          </div>
+                      </div>
+                     <!-- <div *ngIf="checkedIp == false"> -->
+                        <div class="form-group row">
+                            <label  class="col-sm-4 text-right control-label col-form-label">Redirection URL</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="url"  name="url"     placeholder="Redirection URL" onkeyup="urlIpselection('url')">
+                            </div> 
+                        </div>
+                     <!-- </div> -->
+                      <div  *ngIf="disableIp ==false">
+                        <div class="form-group row"   id="iplock">
+                            <label for="ip" class="col-sm-4 text-right control-label col-form-label" >Redirection IP</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="ip"   id="ip" placeholder="Redirection IP"   onkeyup="urlIpselection('ip')"  >
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                          <div class="col-md-8 offset-md-4">
+                              <div class="custom-control custom-checkbox mr-sm-2">
+                                  <input type="checkbox"  id="https"  name="https"  / >
+                                  <label  >https</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <div class="col-md-12 text-center">
+                              <button type="submit" class="btn btn-primary"  >
+                                  Submit</button>
+                          </div>
+                      </div>
+
+                  </div>
+
+        
+          </form></div>
+      </div>
+  </div>
+</div>
+
+
+<!-- 
+<div >
+  <h2>Url Redirection Goes here </h2>
+
+
+    Existing  Domain:<br>
+    <input type="text"  [(ngModel)]="exit" value="Mickey" class="fixBorder">
+    <br>
+    Redirection Domain Ip:<br>
+    <input type="text"  [(ngModel)]="redirect" value="Mouse"  class="fixBorder"> 
+    <br>
+
+  
+    Redirection Domain Url:<br>
+    <input type="text" [(ngModel)]="url" value="Mouse"   class="fixBorder">
+
+    http
+    <input type="checkbox" id="One" [(ngModel)]="checked1" (click)="checkValue( 'one')"> 
+    https
+    <input type="checkbox" id="Two"  [(ngModel)]="checked2"  (click)="checkValue('two')"> 
+    <br>
+    <br>
+    <input type="submit" (click)="sendData()" value="Submit"   class="fixBorder">
+
+  
+</div> -->
+
+<div>
+
+
+</div>
+
+<script>
+
+ function urlIpselection(data){
+     if(data=='url'){
+
+         let  dataUrl =  document.getElementById('url').value
+
+         if(dataUrl){
+    document.getElementById("ip").setAttribute("disabled" , "true")
+         }
+         else {
+                 document.getElementById("ip").removeAttribute("disabled" , "true")
+         }
+
+    
+
+
+     }
+     if(data =='ip'){
+
+       
+         let  dataIp=  document.getElementById('ip').value
+
+         if(dataIp){
+    document.getElementById("url").setAttribute("disabled" , "true")
+         }
+         else {
+                 document.getElementById("url").removeAttribute("disabled" , "true")
+         }
+
+
+
+
+     }
+
+
+
+ }   
+</script>
